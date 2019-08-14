@@ -5,7 +5,7 @@ Google Cloud Buildの結果をSlack通知する。
 ## 使い方
 
 `git clone`してから次のコマンドを実行する。
-`BUCKET`変数と`SLACK_WEBHOOK_URL`変数は置き換える。
+`BUCKET`変数と`SLACK_WEBHOOK_URL`変数は自分の環境に置き換える。
 ```bash
 # Cloud Function用のストレージバケット名
 # ex) my-project-cloud-build-notification
