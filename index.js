@@ -1,5 +1,5 @@
 const IncomingWebhook = require('@slack/client').IncomingWebhook;
-const webhook = new IncomingWebhook('https://hooks.slack.com/services/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');
+const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 // const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
 // subscribe is the main function called by Cloud Functions.

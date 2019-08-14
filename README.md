@@ -1,15 +1,21 @@
-# cloud-build-notification
+# cloud-build-notification-slack
 
 Google Cloud Buildの結果をSlack通知する。
 
 ## 使い方
 
+`git clone`してから次のコマンドを実行する。
+
 ```bash
-git clone <>
-```
+# Cloud Function用のストレージバケットを作成する
+BUCKET='my-project-cloud-build-notification'
+gsutil mb gs://$BUCKET
 
-
-環境変数にSlackのWebhook URLを設定する。
-```
-gcloud functions deploy subscribe --update-env-vars HOGE=123
+# デプロイ
+gcloud functions deploy cloud-build-notification-slack \
+    --stage-bucket $BUCKET \
+    --entry-point subscribe \
+    --trigger-topic cloud-builds \
+    --runtime nodejs8 \
+    --set-env-vars SLACK_WEBHOOK_URL='https://hooks.slack.com/services/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'
 ```
