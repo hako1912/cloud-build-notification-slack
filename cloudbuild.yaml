@@ -4,7 +4,8 @@ steps:
     'beta', 
     'functions',
     'deploy',
-    'subscribe', 
+    'cloud-build-notification-slack', 
+    '--entry-point', 'subscribe',
     '--stage-bucket', '${PROJECT_ID}-cloud-build-notification',
     '--trigger-topic', 'cloud-builds',
     '--runtime', 'nodejs8'
